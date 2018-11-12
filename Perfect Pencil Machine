@@ -1,0 +1,64 @@
+//Perfect Pencil Machine
+
+#define LED1 8  // LED definition 
+#define LED2 9  // LED definition
+#define LED3 10 // LED definition
+#define LED4 11 // LED definition
+#define S1 1    // Switch definition 
+#define S2 2    // Switch definition 
+#define S3 3    // Switch definition 
+#define S4 4    // Switch definition `
+
+int s1state;  
+int s2state;
+int s3state;
+int s4state;
+
+void setup(){
+
+  pinMode(LED1, OUTPUT); // Out to LED
+  pinMode(LED2, OUTPUT); // Out to LED
+  pinMode(LED3, OUTPUT); // Out to LED
+  pinMode(LED4, OUTPUT); // Out to LED
+
+  pinMode(S1, INPUT);    // In from switch
+  pinMode(S2, INPUT);    // In from switch
+  pinMode(S3, INPUT);    // In from switch
+  pinMode(S4, INPUT);    // In from switch
+
+}
+
+void loop() {
+    if (digitalRead(S4)==HIGH && digitalRead(S3)==HIGH) {
+    digitalWrite(LED3, HIGH);
+    }
+  
+    else {
+    digitalWrite(LED3, LOW);
+    }
+  
+    if ((digitalRead(S1)==HIGH && digitalRead(S3)==HIGH) || digitalRead(S2)==HIGH || digitalRead(S4)==HIGH) {
+    digitalWrite(LED1, HIGH);
+    }
+  
+    else{
+      digitalWrite(LED1, LOW);
+    }
+    
+    if ((digitalRead(4)==HIGH && digitalRead(1)==HIGH) || digitalRead(2)==HIGH) {
+      digitalWrite(LED4, HIGH);
+    }
+    
+    else {
+      digitalWrite(LED4, LOW);
+    }
+    
+    if (digitalRead(S4)==HIGH) {
+      digitalWrite(LED2, HIGH);
+    }
+    
+    else {
+      digitalWrite(LED2, LOW);
+    }
+    
+    }
